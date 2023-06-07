@@ -1,10 +1,8 @@
 package tr.edu.metu.ii.sm.additionapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import tr.edu.metu.ii.sm.additionapp.exceptions.OverflowException;
 import tr.edu.metu.ii.sm.additionapp.model.AdditionModel;
 import tr.edu.metu.ii.sm.additionapp.service.AdditionService;
 
@@ -20,7 +18,7 @@ public class AdditionController {
     }
 
     @RequestMapping(value="/addIntegers", method=RequestMethod.POST)
-    public AdditionModel addIntegers(@RequestBody AdditionModel model) {
+    public AdditionModel addIntegers(@RequestBody AdditionModel model) throws OverflowException {
         model.setResult(additionService.addIntegers(model.getA(), model.getB()));
         return model;
     }
