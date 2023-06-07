@@ -15,7 +15,7 @@ public class AdditionController {
     AdditionService additionService;
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)
-    public String addIntegers() {
+    public String hello() {
         return "Hello world!";
     }
 
