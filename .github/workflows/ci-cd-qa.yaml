@@ -2,7 +2,7 @@ name: sm 703 CI/CD pipeline
 
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "release" ]
 
 env:
   PROJECT_ID: thinking-park-389211 # TODO: update Google Cloud project id
