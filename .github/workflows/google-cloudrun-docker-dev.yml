@@ -51,7 +51,7 @@ on:
 env:
   PROJECT_ID: thinking-park-389211 # TODO: update Google Cloud project id
   GAR_LOCATION: us-east1 # TODO: update Artifact Registry location
-  SERVICE: sm703-service # TODO: update Cloud Run service name
+  SERVICE: sm703-service-dev # TODO: update Cloud Run service name
   REGION: us-east1 # TODO: update Cloud Run service region
 
 jobs:
