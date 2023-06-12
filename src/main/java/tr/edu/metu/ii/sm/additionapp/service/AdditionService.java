@@ -8,7 +8,8 @@ public class AdditionService {
     public int addIntegers(int a, int b) throws OverflowException {
         int res = 0;
         try {
-            res = Math.addExact(a,b);
+            //res = Math.addExact(a,b);
+            res = Math.subtractExact(a,b);
         } catch (ArithmeticException e) {
             throw new OverflowException(e.getMessage());
         }
