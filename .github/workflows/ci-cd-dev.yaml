@@ -28,6 +28,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
   analyze:
+    needs: build
     name: Analyze
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
@@ -59,6 +60,7 @@ jobs:
         category: "/language:${{matrix.language}}"
 
   deploy:
+    needs: [build, analyze]
     name: Deploy
     permissions:
       contents: 'read'
