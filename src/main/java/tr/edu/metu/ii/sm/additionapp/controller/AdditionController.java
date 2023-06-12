@@ -14,7 +14,7 @@ public class AdditionController {
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)
     public String hello() {
-        return "Hello qa env!";
+        return "Hello dev env!";
     }
 
     @RequestMapping(value="/addIntegers", method=RequestMethod.POST)
