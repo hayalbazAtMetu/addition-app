@@ -14,6 +14,7 @@ public class AdditionController {
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)
     public String hello() {
+        String password = "123123123";
         return "Hello prod env!";
     }
 
