@@ -6,6 +6,10 @@ import tr.edu.metu.ii.sm.additionapp.exceptions.OverflowException;
 import tr.edu.metu.ii.sm.additionapp.model.AdditionModel;
 import tr.edu.metu.ii.sm.additionapp.service.AdditionService;
 
+import javax.crypto.Cipher;
+import javax.crypto.NoSuchPaddingException;
+import java.security.NoSuchAlgorithmException;
+
 @RestController
 @RequestMapping("/api")
 public class AdditionController {
@@ -13,7 +17,8 @@ public class AdditionController {
     AdditionService additionService;
 
     @RequestMapping(value="/hello", method=RequestMethod.GET)
-    public String hello() {
+    public String hello() throws NoSuchPaddingException, NoSuchAlgorithmException {
+        Cipher c = Cipher.getInstance("DES");
         String password = "123123123";
         return "Hello prod environment!";
     }
